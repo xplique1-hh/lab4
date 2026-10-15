@@ -1,15 +1,13 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <locale.h>
 
 int main() {
     setlocale(LC_ALL, "RUS");
     int A, B, C;
+    int res;
     printf("Введите номера трех игроков (A, B, C): ");
     scanf("%d %d %d", &A, &B, &C);
-    if ((A + B + C) % 3 == 0) {
-        printf("\nСчастливая тройка, cумма номеров (%d + %d + %d = %d) делится на 3 без остатка.\n", A, B, C, A + B + C);
-    }
-    else {
-        printf("\nОбычная тройка, cумма номеров (%d + %d + %d = %d) не делится на 3 без остатка.\n", A, B, C, A + B + C);
-    }
+    res = ((A + B + C) % 3 == 0);
+    printf("Результат: %d (1 - счастливая, 0 - не счастливая)\n", res);
+    return 0;
 }
